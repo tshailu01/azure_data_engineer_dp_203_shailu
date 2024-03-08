@@ -1,0 +1,53 @@
+{
+	"name": "DS_REST_PARQ_OUTPUT",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_REST_PARQ_OUTPUT",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileSystem": "adlsoutput"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "number",
+				"type": "UTF8"
+			},
+			{
+				"name": "first_name",
+				"type": "UTF8"
+			},
+			{
+				"name": "last_name",
+				"type": "UTF8"
+			},
+			{
+				"name": "gender",
+				"type": "UTF8"
+			},
+			{
+				"name": "birth_date",
+				"type": "UTF8"
+			},
+			{
+				"name": "employment_status",
+				"type": "UTF8"
+			},
+			{
+				"name": "annual_salary",
+				"type": "UTF8"
+			},
+			{
+				"name": "tax_file_no",
+				"type": "UTF8"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,31 @@
+{
+	"name": "EVENT_CSV_PARQUET",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "PL_CSV_PARQUET",
+					"type": "PipelineReference"
+				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "PL_CSV_PARQUET",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/adlsinput/blobs/csv",
+			"blobPathEndsWith": "parquet",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/0ad3eaf1-e454-4628-ac3b-232aa64d5fbf/resourceGroups/rg-dev-salesus-shailu/providers/Microsoft.Storage/storageAccounts/adlsdevsalesusshailu",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}

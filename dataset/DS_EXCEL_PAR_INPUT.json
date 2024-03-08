@@ -1,0 +1,22 @@
+{
+	"name": "DS_EXCEL_PAR_INPUT",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_EXCEL_PAR_INPUT",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "Sheet1",
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "file_example_XLS_10.xls",
+				"folderPath": "EXCEL",
+				"fileSystem": "adlsinput"
+			}
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

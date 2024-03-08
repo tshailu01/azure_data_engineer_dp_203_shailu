@@ -1,0 +1,9 @@
+{
+	"name": "adf-dev-salesus-shailu",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "736b692b-b9ae-4f40-a0d0-c5875ebe3465",
+		"tenantId": "2cfcd64a-2773-4639-8139-fa680d36bc1d"
+	}
+}

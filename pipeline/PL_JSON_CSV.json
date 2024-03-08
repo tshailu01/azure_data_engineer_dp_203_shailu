@@ -1,0 +1,125 @@
+{
+	"name": "PL_JSON_CSV",
+	"properties": {
+		"activities": [
+			{
+				"name": "CPY_JSONDATA",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "JsonSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "JsonReadSettings"
+						}
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"enableSkipIncompatibleRow": true,
+					"logSettings": {
+						"enableCopyActivityLog": true,
+						"copyActivityLogSettings": {
+							"logLevel": "Warning",
+							"enableReliableLogging": false
+						},
+						"logLocationSettings": {
+							"linkedServiceName": {
+								"referenceName": "EERORLOGS",
+								"type": "LinkedServiceReference"
+							},
+							"path": "errorlogs"
+						}
+					},
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "$['Name']"
+								},
+								"sink": {
+									"name": "Name",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Mobile']"
+								},
+								"sink": {
+									"name": "Mobile",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Boolean']"
+								},
+								"sink": {
+									"name": "Boolean",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Address']['Permanent address']"
+								},
+								"sink": {
+									"name": "Permanent address",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Address']['current Address']"
+								},
+								"sink": {
+									"name": "current Address",
+									"type": "String"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "DS_JSON_CSV_INPUT",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DS_JSON_CSV_OUTPUT",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2024-02-28T04:42:44Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

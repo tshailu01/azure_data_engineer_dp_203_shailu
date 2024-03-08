@@ -1,0 +1,25 @@
+{
+	"name": "SCH_TRIGGER_EXCELDATA",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "PL_EXCEL_PARQUET",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Minute",
+				"interval": 15,
+				"startTime": "2024-02-29T09:11:00",
+				"endTime": "2024-03-01T09:11:00",
+				"timeZone": "India Standard Time"
+			}
+		}
+	}
+}
