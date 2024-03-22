@@ -1,0 +1,24 @@
+{
+	"name": "SCH_REST_PARQUET_DATA",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "pipeline1",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Day",
+				"interval": 1,
+				"startTime": "2024-03-22T06:47:00",
+				"timeZone": "India Standard Time"
+			}
+		}
+	}
+}
