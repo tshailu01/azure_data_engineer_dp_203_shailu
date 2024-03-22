@@ -1,0 +1,24 @@
+{
+	"name": "EVENT_MANUALFILE_INGESTION",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "PL_ADLS_TO_PARQUET",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/adlsdevsalesusshailu/blobs/",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/0ad3eaf1-e454-4628-ac3b-232aa64d5fbf/resourceGroups/rg-dev-salesus-shailu/providers/Microsoft.Storage/storageAccounts/adlsdevsalesusshailu",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}

@@ -1,0 +1,19 @@
+{
+	"name": "DS_MANUALFILE_TO_OUTPUT",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_MANUALFILE_TO_PARQ",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileSystem": "manualfilepayment"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
